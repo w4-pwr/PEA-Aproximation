@@ -30,8 +30,7 @@ double GetCounter()
 
 void solveExampleData()
 {
-	BackPack backpackProblem();
-	//backpackProblem.solveBrute();
+	BackPack backpackProblem(23,5);
 }
 
 void solveFileData()
@@ -40,14 +39,14 @@ void solveFileData()
 	cout << "Podaj nazwe pliku z danymi:";
 	cin >> name;
 	BackPack backpackProblem(name);
-	backpackProblem.solveDynamically();
+	backpackProblem.solveApproximatly(0.1);
 }
 
 void solveRandomData()
 {
 	BackPack backpackProblem(10,5);
 	backpackProblem.displayPossible();
-	backpackProblem.solveDynamically();
+	backpackProblem.solveApproximatly(0.1);
 }
 
 void showMenu()
@@ -57,7 +56,7 @@ void showMenu()
 	do
 	{
 		cout << "*************************************\n";
-		cout << "Rozwiazanie problemu plecakowego, podejscie dynamiczne:\n";
+		cout << "Rozwiazanie problemu plecakowego, podejscie aproksymacyjne:\n";
 		cout << " 1 - Dane przykladowe\n";
 		cout << " 2 - Dane z pliku\n";
 		cout << " 3 - Dane wygenerowane \n";

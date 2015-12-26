@@ -9,19 +9,16 @@
 #define SRC_BACKPACKPROBLEM_H_
 #include <set>
 #include <vector>
-#include <fstream>
-#include <string>
 #include "Item.h"
-#include <iostream>
-#include <queue>
-#include <algorithm>
-#include <math.h>
-#include <time.h>
+
 using namespace std;
 
 	class BackPack {
 		int capacity;
 		int N; //ilosc elementow
+		int K;// wspolczynnik skalowania
+		
+		float findMaxPrice();
 
 	public:
 		
@@ -38,6 +35,11 @@ using namespace std;
 
 		int getN();
 		int getCapacity();
+		int getPrimCapacity();
+
+		void scalePrices();
+		void solveApproximatly(float epsilon);
+		
 	};
 
 

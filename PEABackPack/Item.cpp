@@ -26,6 +26,11 @@ namespace std {
 		return price;
 	}
 
+
+	void Item::setPrice(int price)  {
+		this->price = price;
+	}
+
 	bool Item::operator < (const Item& str) const
 	{
 		return (1.0*price / weight > 1.0*str.getPrice() / str.getWeight());

@@ -19,6 +19,7 @@ namespace std {
 
 		int getWeight()const;
 		int getPrice()const;
+		void setPrice(int price);
 		bool operator < (const Item& str) const;
 		virtual ~Item();
 	};
