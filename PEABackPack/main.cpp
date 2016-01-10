@@ -2,6 +2,7 @@
 #include<string>
 #include <windows.h>
 #include "BackPack.h"
+#include <ctime>
 
 using namespace std;
 
@@ -30,7 +31,7 @@ double GetCounter()
 
 void solveExampleData()
 {
-	BackPack backpackProblem(23,5);
+	BackPack backpackProblem("dane.txt");
 }
 
 void solveFileData()
@@ -93,6 +94,40 @@ void showMenu()
 
 int main()
 {
-	showMenu();
+	//showMenu();
+	srand(time(NULL));
+	int ns[] = {200,250,300,500,750,1000,2000,3000,3500,4000,5000,6000,7500,8000,10000};
+
+	for (int i = 0; i <10; i++)
+	{
+		
+			BackPack backpackProblem(ns[i], ns[i]/100);
+			//backpackProblem.displayPossible();
+			cout << ns[i];
+			StartCounter();
+			backpackProblem.solveDynamically();
+			double time = GetCounter();
+			//cout <<"dyn: " <<	time;
+			StartCounter();
+			backpackProblem.solveApproximatly(0.8);
+			time = GetCounter();
+			//cout << "apr: " << time;
+			cout << endl;
+
+	}
+
+//	BackPack backpackProblem(200, 5);
+//	BackPack backpackProblem("dane.txt");
+//	backpackProblem.solveDynamically();
+//
+//	BackPack backpackProblem2("dane.txt");
+
+
+//	backpackProblem2.solveApproximatly(0.1);
+
+	int rafal;
+	cin >> rafal;
+	
+
 	return 0;
 }

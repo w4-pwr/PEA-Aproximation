@@ -35,9 +35,10 @@ using namespace std;
 
 		int getN();
 		int getCapacity();
-		int getPrimCapacity();
+		void setCapacity(int cap);
+		
 
-		void scalePrices();
+		void scaleWeights();
 		void solveApproximatly(float epsilon);
 		
 	};

@@ -11,15 +11,16 @@
 namespace std {
 
 	class Item {
-		int weight;
+		double weight;
 		int price;
 	public:
 		Item();
 		Item(int weight, int price);
 
-		int getWeight()const;
+		double getWeight()const;
 		int getPrice()const;
 		void setPrice(int price);
+		void setWeight(double weight);
 		bool operator < (const Item& str) const;
 		virtual ~Item();
 	};

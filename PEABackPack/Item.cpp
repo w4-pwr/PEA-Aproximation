@@ -19,7 +19,7 @@ namespace std {
 		price = p;
 
 	}
-	int Item::getWeight() const {
+	double Item::getWeight() const {
 		return weight;
 	}
 	int Item::getPrice() const {
@@ -29,6 +29,11 @@ namespace std {
 
 	void Item::setPrice(int price)  {
 		this->price = price;
+	}
+
+	void Item::setWeight(double weight)
+	{
+		this->weight = weight;
 	}
 
 	bool Item::operator < (const Item& str) const
